@@ -47,20 +47,3 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-
----
-
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: podinfo
-  labels:
-    app: podinfo
-spec:
-  rules:
-    - host: app.example.com
-      http:
-        paths:
-          - backend:
-              serviceName: my-podinfo-svc
-              servicePort: 80
